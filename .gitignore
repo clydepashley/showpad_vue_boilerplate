@@ -19,3 +19,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+# Showpad package
+com.org.*
+.showpadconfig.json

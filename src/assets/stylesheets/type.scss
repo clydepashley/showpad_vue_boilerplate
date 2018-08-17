@@ -1,0 +1,32 @@
+//---------- general
+//@import url('https://fonts.googleapis.com/css?family=Roboto:500,700');
+
+//---------- general
+html {
+    font-size: 10px;
+}
+
+h1, .h1, h1 a, .h1 a {
+  @include font-size(24px);
+  @include line-height(27px);
+}
+
+h2, .h2, h2 a, .h2 a {
+  letter-spacing: 0.1em;
+
+  @include font-size(14px);
+  @include line-height(20px);
+
+}
+
+div, p, a {
+
+}
+
+ul li, ol li {
+
+}
+
+.logo {
+
+}

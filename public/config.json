@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "labels": {
+    "settings": {
+      "domain": {
+        "value": "sptestlaurensdhondt",
+        "description": "Showpad domain"
+      },
+      "locale": {
+        "value": "en",
+        "description": "Language of experience"
+      },
+      "colors": {
+        "primary_color": {
+          "value": "#43B883",
+          "description": "Primary color"
+        },
+        "secondary_color": {
+          "value": "#35495E",
+          "description": "Secondary color"
+        }
+      }
+    },
+    "translations": {
+      "en": {
+        "home": { 
+          "title": {
+            "value": "Showpad Vue Boilerplate EN",
+            "description": "Title of experience"
+          }
+        }
+      },
+      "nl": {
+        "home": { 
+          "title": {
+            "value": "Showpad Vue Boilerplate NL",
+            "description": "Title of experience"
+          }
+        }
+      }
+    }
+  },
+  "contents": {
+    "home": {
+      "logo": {
+        "type": "asset",
+        "value" : ["2bedc9b389a622b2dedc066e48d64e2f"],
+        "description": "Logo for the experience"
+      }
+    }
+  }
+}

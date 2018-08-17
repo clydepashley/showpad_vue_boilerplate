@@ -1,0 +1,15 @@
+//---------- Colors
+$black: #000000;
+$white: #ffffff;
+
+//---------- Typo
+$text-color: $black;
+
+//---------- Breakpoints
+$screen-lg-max: 1199px;
+$screen-md-max: 991px;
+$screen-sm-max: 767px;
+$screen-xs-max: 575px;
+
+//---------- Webroot paths
+$image-path: '../images' !default;
