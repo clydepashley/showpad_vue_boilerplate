@@ -2,7 +2,7 @@
   <div id="app" class="padding-30 margin text-center d-flex align-items-center">
     <div class="w-100">
       <img
-        v-img-src="{ id: logo.id, applink: logo.applink}"
+        v-img-src="{ id: logo.id, appLink: logo.appLink}"
         class="logo margin-bottom-15"
       >
 

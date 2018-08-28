@@ -1,5 +1,7 @@
 # showpad_vue_boilerplate
 
+Note: This project uses the standardJS linting (https://standardjs.com/)
+
 ## Project setup
 
 change manifest.json in public folder
@@ -33,4 +35,3 @@ npm run build
 ```
 showpad experience package --src dist
 ```
-

@@ -23,7 +23,7 @@
     },
     "translations": {
       "en": {
-        "home": { 
+        "home": {
           "title": {
             "value": "Showpad Vue Boilerplate EN",
             "description": "Title of experience"
@@ -31,7 +31,7 @@
         }
       },
       "nl": {
-        "home": { 
+        "home": {
           "title": {
             "value": "Showpad Vue Boilerplate NL",
             "description": "Title of experience"

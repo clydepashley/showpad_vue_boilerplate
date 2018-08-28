@@ -26,7 +26,7 @@ Vue.directive('bg-secondary', {
 
 Vue.directive('img-src', {
   bind: function (el, binding, vnode) {
-    const assetsUrl = binding.value.applink.replace('showpad://file/', '')
+    const assetsUrl = binding.value.appLink.replace('showpad://file/', '')
     el.src = window.ShowpadLib.getAssetFileUrl(binding.value.id, assetsUrl)
   }
 })
