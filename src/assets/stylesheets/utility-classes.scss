@@ -143,6 +143,21 @@
 
 //----------- button
 .button {
-  @include clean;
-  padding: 10px 15px;
+  @include transition(200ms);
+  cursor: pointer;
+
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 7.5px 15px;
+
+  &:hover {
+    color: $white;
+    outline: none;
+    @extend .box-shadow;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }

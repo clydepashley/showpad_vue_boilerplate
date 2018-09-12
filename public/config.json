@@ -2,10 +2,6 @@
   "version": 1,
   "labels": {
     "settings": {
-      "domain": {
-        "value": "sptestlaurensdhondt",
-        "description": "Showpad domain"
-      },
       "locale": {
         "value": "en",
         "description": "Language of experience"
@@ -19,6 +15,16 @@
           "value": "#35495E",
           "description": "Secondary color"
         }
+      }
+    },
+    "pdfPlugin": {
+      "visible": {
+        "value": "true",
+        "description": "set PDF plugin visible"
+      },
+      "fields": {
+        "value": "{'3a93e166e7cc0ff71dc837e80f72214b311e0e9818990fe4489fae96d3c9e4d1':{'name':'variable_sdkVersion','type':'variable','label':'sdkVersion','value':'5','x':'113.0827845718158','y':'143.21905051533997','w':'439.40921919038476','h':'13.921851837803999'},'a10d345ca59f63d806c4980948a68fad0ba75e9c0274778985eb887621698e93':{'name':'variable_vueVersion','type':'variable','label':'vueVersion','value':'2.5.17','x':'113.6904985887482','y':'181.40012923373118','w':'439.40921919038476','h':'13.921851837803999'}}",
+        "description": "Fill in stringified JSON for offline capabilities"
       }
     },
     "translations": {
@@ -41,10 +47,17 @@
     }
   },
   "contents": {
+    "pdfPlugin": {
+      "background": {
+        "type": "asset",
+        "value": ["1ab91f3c8b248f9f3e83ae17f1cf8d66"],
+        "description": "Background for the template"
+      }
+    },
     "home": {
       "logo": {
         "type": "asset",
-        "value" : ["2bedc9b389a622b2dedc066e48d64e2f"],
+        "value": ["2bedc9b389a622b2dedc066e48d64e2f"],
         "description": "Logo for the experience"
       }
     }

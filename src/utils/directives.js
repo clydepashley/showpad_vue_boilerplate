@@ -24,6 +24,18 @@ Vue.directive('bg-secondary', {
   }
 })
 
+Vue.directive('border-primary', {
+  bind: function (el, binding, vnode) {
+    el.style.borderColor = window.labels.settings.colors.primary_color.value
+  }
+})
+
+Vue.directive('border-secondary', {
+  bind: function (el, binding, vnode) {
+    el.style.borderColor = window.labels.settings.colors.secondary_color.value
+  }
+})
+
 Vue.directive('img-src', {
   bind: function (el, binding, vnode) {
     const assetsUrl = binding.value.appLink.replace('showpad://file/', '')

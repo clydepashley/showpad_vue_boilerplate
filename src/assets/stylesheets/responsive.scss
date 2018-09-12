@@ -1,16 +1,19 @@
-
-@media screen and (max-width: $screen-lg-max) {
-
-}
-
-@media screen and (max-width: $screen-md-max) {
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1200px) {
 
 }
 
-@media screen and (max-width: $screen-sm-max) {
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) {
 
 }
 
-@media screen and (max-width: $screen-xs-max) {
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
 
 }
