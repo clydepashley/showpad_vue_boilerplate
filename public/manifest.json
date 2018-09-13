@@ -1,7 +1,7 @@
 {
     "identifier": "com.org.showpad.experience",
     "name": "showpad_vue_boilerplate",
-    "version": "0.3.8",
+    "version": "0.4.0",
     "description": "Boilerplate for integrating showpad SDK within Vue.js app",
     "author": "Laurens DHondt"
 }
