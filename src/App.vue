@@ -1,39 +1,44 @@
 <template>
   <div id="app">
-    <div class="app-container padding-30 text-center d-flex align-items-center">
+    <div
+      class="app-container padding-30 text-center d-flex align-items-center"
+      v-bg-src="{ id: background.id, appLink: background.appLink}"
+    >
       <div class="w-100">
-        <img
-          v-img-src="{ id: logo.id, appLink: logo.appLink}"
-          class="logo margin-bottom-15"
-        >
+        <div class="d-inline-block bg-white padding-30 border-radius box-shadow">
+          <img
+            class="logo margin-bottom-15"
+            v-img-src="{ id: logo.id, appLink: logo.appLink}"
+          >
 
-        <h1
-          v-cl-secondary
-        >
-          {{ $t("home.title.value") }}
-        </h1>
+          <h1
+            class="font-smoothing"
+            v-cl-secondary
+          >
+            {{ $t("home.title.value") }}
+          </h1>
 
-        <ul
-          class="padding-15 margin-bottom-15"
-          v-cl-secondary
-        >
-          <li>Showpad SDK version: {{ getSdkVersion }}</li>
-          <li>Vue version: {{ getVueVersion }}</li>
-        </ul>
+          <ul
+            class="padding-15 margin-bottom-15"
+            v-cl-secondary
+          >
+            <li>{{ $t("home.sdkVersion.value") }} {{ getSdkVersion }}</li>
+          </ul>
 
-        <button
-          class="button cl-white border-radius"
-          v-bg-primary
-          @click="generatePdf"
-        >
-          Generate PDF
+          <button
+            class="button cl-white border-radius"
+            v-bg-primary
+            v-touch:tap="generatePdf"
+          >
+            <div
+              v-if="getProcessing === true"
+              class="animation-rotate d-inline-block">
+                <font-awesome-icon icon="spinner" />
+            </div>
 
-          <div
-            v-if="pdfProcessing"
-            class="animation-rotate d-inline-block">
-              <i class="fas fa-spinner"></i>
-          </div>
-        </button>
+            {{ $t("home.generatePdf.value") }}
+          </button>
+        </div>
       </div>
     </div>
 
@@ -43,7 +48,6 @@
 
 <script>
 
-import Vue from 'vue'
 import { mapGetters } from 'vuex'
 
 import apiAssets from '../../showpad_library/js/api/assets'
@@ -53,52 +57,51 @@ export default {
   name: 'app',
   data () {
     return {
-      logo: window.assets[window.contents.home.logo.value[0]],
-      console: '',
-      pdfProcessing: false
+      logo: window.assets[window.contents.design.logo.value[0]],
+      background: window.assets[window.contents.design.background.value[0]]
     }
   },
   computed: {
     ...mapGetters([
       'getSdkVersion',
-      'getVueVersion',
-      'getTemplateId',
-      'getFields'
-    ]),
-    vueVersion () {
-      return Vue.version
-    }
+      'getProcessing'
+    ])
   },
   mounted () {
     this.$store.commit('updateSdkVersion', window.ShowpadLib.getVersion())
-    this.$store.commit('updateVueVersion', this.vueVersion)
   },
   methods: {
     generatePdf () {
       let self = this
-      self.pdfProcessing = true
+      let templateId = window.contents.pdfPlugin.templates['template1'].pdf.value[0]
+      let fields = JSON.parse(window.labels.pdfPlugin.templates['template1'].fields.value.replace(/'/g, '"'))
+
+      this.$store.commit('updateTemplateId', templateId)
+      this.$store.commit('setFields', fields)
+      this.$store.commit('updateProcessing', true)
 
       pdf.JsonToPdf(window.apiConfig, {
-        title: self.$t('home.title.value'),
+        title: 'Showpad Vue boilerplate',
         author: 'Showpad PDF plugin',
-        templateId: this.getTemplateId,
-        fields: self.getFields
+        templateId: templateId,
+        fields: fields,
+        questions: self.questions
       })
         .then(function (response) {
           apiAssets.postPdfToPersonalDivision(window.apiConfig, {
-            name: self.$t('home.title.value'),
+            name: 'Showpad Vue boilerplate',
             description: 'Showpad PDF plugin',
             file: response
           })
             .then(function (response) {
+              self.$store.commit('updateProcessing', false)
+
               let assets = []
               let assetUrl = response.appLink.replace('showpad://file/', '')
               assets.push(assetUrl)
 
-              window.ShowpadLib.addAssetsToCollection(assets, function (collectionId) {
-                if (collectionId) {
-                  self.pdfProcessing = false
-                }
+              window.ShowpadLib.addAssetsToCollection(response, () => {
+                console.log('succesfully added to collection')
               })
             })
         })
@@ -110,6 +113,8 @@ export default {
 <style lang="scss">
 .app-container {
   height: 100vh;
+  background-size: cover;
+  background-position: center;
 
   .logo {
     width: auto;
@@ -117,7 +122,7 @@ export default {
   }
 
   .animation-rotate {
-    margin-left: 5px;
+    margin-right: 5px;
   }
 }
 </style>

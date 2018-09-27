@@ -4,12 +4,10 @@ $white: #ffffff;
 
 //---------- Typo
 $text-color: $black;
+$font-family: 'Muli', sans-serif;
 
 //---------- Breakpoints
 $screen-xl-max: 1199px;
 $screen-lg-max: 991px;
 $screen-md-max: 767px;
 $screen-sm-max: 575px;
-
-//---------- Webroot paths
-$image-path: '../images' !default;

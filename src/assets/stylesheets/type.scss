@@ -1,30 +1,74 @@
 //---------- general
-//@import url('https://fonts.googleapis.com/css?family=Roboto:500,700');
-
-//---------- general
 html {
     font-size: 10px;
 }
 
 .app-container {
   h1, .h1, h1 a, .h1 a {
+    font-family: $font-family;
+    font-weight: 600;
+
     @include font-size(24px);
-    @include line-height(27px);
+    @include line-height(30px);
   }
 
   h2, .h2, h2 a, .h2 a {
-    letter-spacing: 0.1em;
+    font-family: $font-family;
+    font-weight: 400;
+
+    @include font-size(24px);
+    @include line-height(30px);
+  }
+
+  h3, .h3, h3 a, .h3 a {
+    font-family: $font-family;
+    font-weight: 600;
+
+    @include font-size(20px);
+    @include line-height(26px);
+  }
+
+  h4, .h4, h4 a, .h4 a {
+    font-family: $font-family;
+    font-weight: 400;
+
+    @include font-size(20px);
+    @include line-height(26px);
+  }
+
+  h5, .h5, h5 a, .h5 a {
+    font-family: $font-family;
+    font-weight: 600;
+
+    @include font-size(18px);
+    @include line-height(24px);
+  }
+
+  h6, .h6, h6 a, .h6 a {
+    font-family: $font-family;
+    font-weight: 400;
+
+    @include font-size(18px);
+    @include line-height(24px);
+  }
+
+  div, p, ul li, ol li {
+    font-family: $font-family;
+    font-weight: 400;
 
     @include font-size(14px);
-    @include line-height(20px);
+    @include line-height(24px);
 
+    a, strong {
+      font-weight: 600;
+    }
   }
 
-  div, p, a {
+  a, button, .button {
+    font-family: $font-family;
+    font-weight: 600;
 
-  }
-
-  ul li, ol li {
-
+    @include font-size(14px);
+    @include line-height(24px);
   }
 }

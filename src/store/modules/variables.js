@@ -1,24 +1,17 @@
 const state = {
   variables: {
-    sdkVersion: null,
-    vueVersion: null
+    sdkVersion: null
   }
 }
 
 const mutations = {
   updateSdkVersion (state, value) {
     state.variables.sdkVersion = value
-  },
-  updateVueVersion (state, value) {
-    state.variables.vueVersion = value
   }
 }
 
 const actions = {
   updateSdkVersion ({ commit }, value) {
-    commit('updateSdkVersionValue', value)
-  },
-  updateVueVersion ({ commit }, value) {
     commit('updateSdkVersionValue', value)
   }
 }
@@ -29,9 +22,6 @@ const getters = {
   },
   getSdkVersion: state => {
     return state.variables.sdkVersion
-  },
-  getVueVersion: state => {
-    return state.variables.vueVersion
   }
 }
 

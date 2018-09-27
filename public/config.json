@@ -2,19 +2,27 @@
   "version": 1,
   "labels": {
     "settings": {
-      "locale": {
+      "language": {
         "value": "en",
-        "description": "Language of experience"
+        "description": "language"
       },
-      "colors": {
-        "primary_color": {
-          "value": "#43B883",
-          "description": "Primary color"
-        },
-        "secondary_color": {
-          "value": "#35495E",
-          "description": "Secondary color"
-        }
+      "currency": {
+        "value": "€",
+        "description": "currency"
+      }
+    },
+    "design": {
+      "primary_color": {
+        "value": "#43B883",
+        "description": "primary color"
+      },
+      "secondary_color": {
+        "value": "#35495E",
+        "description": "secondary color"
+      },
+      "tertiary_color": {
+        "value": "#000000",
+        "description": "tertiary color"
       }
     },
     "pdfPlugin": {
@@ -22,25 +30,29 @@
         "value": "true",
         "description": "set PDF plugin visible"
       },
-      "fields": {
-        "value": "{'3a93e166e7cc0ff71dc837e80f72214b311e0e9818990fe4489fae96d3c9e4d1':{'name':'variable_sdkVersion','type':'variable','label':'sdkVersion','value':'5','x':'113.0827845718158','y':'143.21905051533997','w':'439.40921919038476','h':'13.921851837803999'},'a10d345ca59f63d806c4980948a68fad0ba75e9c0274778985eb887621698e93':{'name':'variable_vueVersion','type':'variable','label':'vueVersion','value':'2.5.17','x':'113.6904985887482','y':'181.40012923373118','w':'439.40921919038476','h':'13.921851837803999'}}",
-        "description": "Fill in stringified JSON for offline capabilities"
+      "templates": {
+        "template1": {
+          "fields": {
+            "value": "{'3a93e166e7cc0ff71dc837e80f72214b311e0e9818990fe4489fae96d3c9e4d1':{'name':'variable_sdkVersion','type':'variable','label':'sdkVersion','value':'','x':'328.8692380052072','y':'417.97559770510395','w':'20.4863593602738','h':'13.329773081483598'}}",
+            "description": "JSON of pdf"
+          }
+        }
       }
     },
     "translations": {
       "en": {
         "home": {
           "title": {
-            "value": "Showpad Vue Boilerplate EN",
-            "description": "Title of experience"
-          }
-        }
-      },
-      "nl": {
-        "home": {
-          "title": {
-            "value": "Showpad Vue Boilerplate NL",
-            "description": "Title of experience"
+            "value": "Showpad Vue Boilerplate",
+            "description": "Showpad Vue Boilerplate"
+          },
+          "sdkVersion": {
+            "value": "Showpad SDK version:",
+            "description": "Showpad SDK version:"
+          },
+          "generatePdf": {
+            "value": "Generate PDF",
+            "description": "Generate PDF"
           }
         }
       }
@@ -48,17 +60,31 @@
   },
   "contents": {
     "pdfPlugin": {
-      "background": {
-        "type": "asset",
-        "value": ["1ab91f3c8b248f9f3e83ae17f1cf8d66"],
-        "description": "Background for the template"
+      "templates": {
+        "template1": {
+          "pdf": {
+            "type": "asset",
+            "value": ["1ab91f3c8b248f9f3e83ae17f1cf8d66"],
+            "description": "pdf template"
+          },
+          "background": {
+            "type": "asset",
+            "value": ["4b0d34ae48e3171f4d1eacf23293a0c5"],
+            "description": "pdf background"
+          }
+        }
       }
     },
-    "home": {
+    "design": {
       "logo": {
         "type": "asset",
         "value": ["2bedc9b389a622b2dedc066e48d64e2f"],
-        "description": "Logo for the experience"
+        "description": "logo"
+      },
+      "background": {
+        "type": "asset",
+        "value": ["759f617fd94251986954c35d5f9dbfe8"],
+        "description": "background"
       }
     }
   }
