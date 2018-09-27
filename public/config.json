@@ -27,7 +27,7 @@
     },
     "pdfPlugin": {
       "visible": {
-        "value": "true",
+        "value": "false",
         "description": "set PDF plugin visible"
       },
       "templates": {
