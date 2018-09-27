@@ -1,7 +1,7 @@
 # Showpad vue boilerplate
 
-Note: This project uses the standardJS linting (https://standardjs.com/)
-Note: This project uses showpad_library (https://gitlab.showpad.io/laurens.dhondt/showpad_library)
+* Note: This project uses the standardJS linting (https://standardjs.com/)
+* Note: This project uses showpad_library (https://gitlab.showpad.io/laurens.dhondt/showpad_library)
 
 ### Project setup
 
