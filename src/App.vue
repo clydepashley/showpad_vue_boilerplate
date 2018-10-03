@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <div id="console" style="position:absolute;z-index:9999lleft:0;bottom:0;width:100vw;height:200px;padding:15px;background-color:#ffffff;border-top:solid 1px #000000;"></div>
-
     <div
       class="app-container padding-30 text-center d-flex align-items-center"
       v-bg-src="{ id: background.id, appLink: background.appLink}"
