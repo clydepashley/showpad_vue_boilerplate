@@ -1,6 +1,6 @@
 {
   "name": "showpad_vue_boilerplate",
-  "version": "0.0.17",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "serve": "NODE_ENV=dev vue-cli-service serve",
@@ -11,23 +11,22 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
     "@fortawesome/free-solid-svg-icons": "^5.3.1",
     "@fortawesome/vue-fontawesome": "^0.1.1",
-    "axios": "^0.18.0",
     "bootstrap": "^4.1.3",
     "vue": "^2.5.17",
-    "vue-i18n": "^8.0.0",
-    "vue-localstorage": "^0.6.2",
+    "vue-i18n": "^8.1.0",
     "vue2-touch-events": "^1.0.0",
     "vuex": "^3.0.1",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "@showpad/sdk": "^0.6.4",
+    "@showpad/sdk": "^0.7.0",
     "@vue/cli-plugin-babel": "^3.0.1",
     "@vue/cli-plugin-eslint": "^3.0.1",
     "@vue/cli-service": "^3.0.1",
+    "@vue/devtools": "^4.1.5",
     "@vue/eslint-config-standard": "^3.0.1",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.1",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
     "transform-loader": "^0.2.4",
     "vue-template-compiler": "^2.5.17"
   }

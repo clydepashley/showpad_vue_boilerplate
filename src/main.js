@@ -1,3 +1,4 @@
+import devtools from '@vue/devtools'
 import Vue from 'vue'
 import App from './App.vue'
 
@@ -27,6 +28,11 @@ Vue.use(PdfPlugin, {
 })
 
 Vue.config.productionTip = false
+
+// Vue devtools
+if (process.env.NODE_ENV === 'dev') {
+  devtools.connect('http://localhost', 8098)
+}
 
 // load showpad sdk
 window.onShowpadLibLoaded = () => {
