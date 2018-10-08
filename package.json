@@ -1,6 +1,6 @@
 {
   "name": "showpad_vue_boilerplate",
-  "version": "1.2.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "NODE_ENV=dev vue-cli-service serve",

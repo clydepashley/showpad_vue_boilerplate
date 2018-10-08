@@ -1,7 +1,8 @@
 # Showpad vue boilerplate
 
-* Note: This project uses the standardJS linting (https://standardjs.com/)
-* Note: This project uses showpad_library (https://gitlab.showpad.io/laurens.dhondt/showpad_library)
+* note: This project uses the standardJS linting (https://standardjs.com/)
+* note: This project uses showpad_library (https://gitlab.showpad.io/laurens.dhondt/showpad_library)
+* note: This project uses vue_remote_devtools (https://github.com/vuejs/vue-devtools/blob/master/shells/electron)
 
 ### Project setup
 
@@ -16,7 +17,7 @@ showpad auth
 npm install
 ```
 
-### Compiles, hot-reloads and loads SDK
+### Compiles, hot-reloads, loads SDK, Devtools
 
 ```
 npm run serve
@@ -24,6 +25,12 @@ npm run serve
 
 ```
 showpad experience serve --host http://localhost:8080
+```
+
+* if you need vue devtools
+
+```
+vue-devtools
 ```
 
 ### Compiles, minifies and package for uploading
