@@ -1,16 +1,24 @@
 {
-  "name": "showpad_vue_boilerplate",
-  "version": "0.1.0",
+  "name": "vue_boilerplate",
+  "description": "[dev-tools] vue boilerplate for experience app",
+  "author": "Laurens D'Hondt",
+  "version": "4.0.0",
+  "main": "main.js",
   "private": true,
   "scripts": {
-    "serve": "NODE_ENV=dev vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "sdk-serve": "showpad experience serve --host http://localhost:8080",
+    "sdk-build": "showpad experience package --src dist",
+    "vue-serve": "NODE_ENV=dev vue-cli-service serve",
+    "vue-build": "vue-cli-service build",
+    "serve": "npm run sdk-serve | vue-devtools | npm run vue-serve",
+    "build": "npm run vue-build && npm run sdk-build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
     "@fortawesome/free-solid-svg-icons": "^5.3.1",
     "@fortawesome/vue-fontawesome": "^0.1.1",
+    "@showpad/library": "git+ssh://git@gitlab.showpad.io:laurens.dhondt/showpad_library.git",
+    "@showpad/vue-pdf-plugin": "git+ssh://git@gitlab.showpad.io:laurens.dhondt/vue_pdf_plugin.git",
     "bootstrap": "^4.1.3",
     "vue": "^2.5.17",
     "vue-i18n": "^8.1.0",

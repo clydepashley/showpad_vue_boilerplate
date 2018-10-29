@@ -1,33 +1,28 @@
 <template>
   <div id="app">
     <div
-      class="app-container padding-30 text-center d-flex align-items-center"
+      class="app-container font-smoothing padding-30 text-center d-flex align-items-center"
       v-bg-src="{ id: background.id, appLink: background.appLink}"
     >
       <div class="w-100">
         <div class="d-inline-block bg-white padding-30 border-radius box-shadow">
-          <img
-            class="logo margin-bottom-15"
-            v-img-src="{ id: logo.id, appLink: logo.appLink}"
-          >
-
           <h1
-            class="font-smoothing"
-            v-cl-secondary
+            class="margin-bottom-15"
+            v-cl-tertiary
           >
             {{ $t("home.title.value") }}
           </h1>
 
           <ul
-            class="padding-15 margin-bottom-15"
-            v-cl-secondary
+            class="margin-bottom-30"
+            v-cl-tertiary
           >
             <li>{{ $t("home.sdkVersion.value") }} {{ getSdkVersion }}</li>
           </ul>
 
           <button
             class="button cl-white border-radius"
-            v-bg-primary
+            v-bg-gradient="{ orientation: 135}"
             v-touch:tap="generatePdf"
           >
             <div
@@ -49,15 +44,12 @@
 <script>
 
 import { mapGetters } from 'vuex'
-
-import apiAssets from '../../showpad_library/js/api/assets'
-import pdf from '../../showpad_library/js/pdf/pdf'
+import { apiAssets, pdfPdf } from '@showpad/library'
 
 export default {
   name: 'app',
   data () {
     return {
-      logo: window.assets[window.contents.design.logo.value[0]],
       background: window.assets[window.contents.design.background.value[0]]
     }
   },
@@ -80,7 +72,7 @@ export default {
       this.$store.commit('setFields', fields)
       this.$store.commit('updateProcessing', true)
 
-      pdf.JsonToPdf(window.apiConfig, {
+      pdfPdf.JsonToPdf(window.apiConfig, {
         title: 'Showpad Vue boilerplate',
         author: 'Showpad PDF plugin',
         templateId: templateId,
@@ -88,9 +80,11 @@ export default {
         questions: self.questions
       })
         .then(function (response) {
-          apiAssets.postPdfToPersonalDivision(window.apiConfig, {
+          apiAssets.postAssetToPersonalDivision(window.apiConfig, {
             name: 'Showpad Vue boilerplate',
             description: 'Showpad PDF plugin',
+            filetype: 'pdf',
+            extention: '.pdf',
             file: response
           })
             .then(function (response) {

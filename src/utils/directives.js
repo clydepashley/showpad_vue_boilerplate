@@ -64,6 +64,12 @@ Vue.directive('border-tertiary', {
   }
 })
 
+Vue.directive('bg-gradient', {
+  bind: function (el, binding, vnode) {
+    el.style.background = 'linear-gradient(' + binding.value.orientation + 'deg, ' + window.labels.design.primary_color.value + ', ' + window.labels.design.secondary_color.value + ')'
+  }
+})
+
 // Asset directives
 
 Vue.directive('img-src', {

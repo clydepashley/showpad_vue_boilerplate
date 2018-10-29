@@ -13,11 +13,11 @@
     },
     "design": {
       "primary_color": {
-        "value": "#43B883",
+        "value": "#FF6347",
         "description": "primary color"
       },
       "secondary_color": {
-        "value": "#35495E",
+        "value": "#F4B350",
         "description": "secondary color"
       },
       "tertiary_color": {
@@ -33,7 +33,7 @@
       "templates": {
         "template1": {
           "fields": {
-            "value": "{'3a93e166e7cc0ff71dc837e80f72214b311e0e9818990fe4489fae96d3c9e4d1':{'name':'variable_sdkVersion','type':'variable','label':'sdkVersion','value':'','x':'328.8692380052072','y':'417.97559770510395','w':'20.4863593602738','h':'13.329773081483598'}}",
+            "value": "{'3a93e166e7cc0ff71dc837e80f72214b311e0e9818990fe4489fae96d3c9e4d1':{'name':'variable_sdkVersion','type':'variable','label':'sdkVersion','value':'','x':'60.64346190020159','y':'161.71751111821519','w':'473.9849482590124','h':'20.674750085566398'}}",
             "description": "JSON of pdf"
           }
         }
@@ -43,11 +43,11 @@
       "en": {
         "home": {
           "title": {
-            "value": "Showpad Vue Boilerplate",
+            "value": "Vue Boilerplate",
             "description": "Showpad Vue Boilerplate"
           },
           "sdkVersion": {
-            "value": "Showpad SDK version:",
+            "value": "SDK version:",
             "description": "Showpad SDK version:"
           },
           "generatePdf": {

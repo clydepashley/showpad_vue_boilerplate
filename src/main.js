@@ -9,32 +9,22 @@ import './assets/stylesheets/app.scss'
 
 import VueI18n from 'vue-i18n'
 import Vue2TouchEvents from 'vue2-touch-events'
-import PdfPlugin from '../../showpad_library/vue/pdf/pdf-plugin'
+import VuePdfPlugin from '@showpad/vue-pdf-plugin'
 
 import store from './store'
 
-import utilsConfig from '../../showpad_library/js/utils/config'
+import { utilsConfig } from '@showpad/library'
 import json from '../public/config.json'
 
 Vue.use(VueI18n)
-
-Vue.use(Vue2TouchEvents, {
-  tapTolerance: 10,
-  swipeTolerance: 100
-})
-
-// PDF plugin uses vuex store
-Vue.use(PdfPlugin, {
-  store: store
-})
-
-Vue.config.productionTip = false
+Vue.use(Vue2TouchEvents, { tapTolerance: 10, swipeTolerance: 100 })
+Vue.use(VuePdfPlugin, { store: store })
 
 if (process.env.NODE_ENV === 'dev') {
+  Vue.config.productionTip = false
   devtools.connect('http://localhost', '8098')
 }
 
-// load showpad sdk
 window.onShowpadLibLoaded = () => {
   window.ShowpadLib.getShowpadApi(callbackFn)
 
@@ -46,12 +36,11 @@ window.onShowpadLibLoaded = () => {
       json: json
     })
       .then(response => {
-        // set translations based on config
-        const i18n = new VueI18n({
+        let i18n = new VueI18n({
           locale: window.labels.settings.language.value,
           messages: window.labels.translations
         })
-        // init vue app
+
         new Vue({
           render: h => h(App),
           i18n,

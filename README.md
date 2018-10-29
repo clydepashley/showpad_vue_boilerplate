@@ -1,4 +1,4 @@
-# Showpad vue boilerplate
+# Vue boilerplate
 
 * note: This project uses the standardJS linting (https://standardjs.com/)
 * note: This project uses showpad_library (https://gitlab.showpad.io/laurens.dhondt/showpad_library)
@@ -17,32 +17,18 @@ showpad auth
 npm install
 ```
 
-### Compiles, hot-reloads, loads SDK, Devtools
+### SDK-serve, devtools, VUE-serve
 
 ```
 npm run serve
 ```
 
-```
-showpad experience serve --host http://localhost:8080
-```
-
-* if you need vue devtools
-
-```
-vue-devtools
-```
-
-### Compiles, minifies and package for uploading
+### VUE-build, SDK-build
 
 * change manifest version in public folder
 
 ```
 npm run build
-```
-
-```
-showpad experience package --src dist
 ```
 
 ### Upload package to showpad
