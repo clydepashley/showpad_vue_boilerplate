@@ -2,7 +2,7 @@
   "name": "vue_boilerplate",
   "description": "[dev-tools] vue boilerplate for experience app",
   "author": "Laurens D'Hondt",
-  "version": "4.0.0",
+  "version": "5.0.2",
   "main": "main.js",
   "private": true,
   "scripts": {

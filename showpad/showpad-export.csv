@@ -1,0 +1,4 @@
+id,"asset name",size,"uploaded date","expiry date",tags,"used in channels",annotatable,confidential,shareable,(page)views,likes,slug
+1ab91f3c8b248f9f3e83ae17f1cf8d66,vue_boilerplate_template.pdf,784807,"2018-10-29 12:49:43",,"pdf, template, vue_boilerplate",vue_boilerplate,1,0,1,0,0,73b27e1f4cc2372b8b2ecf42c4853fb4
+759f617fd94251986954c35d5f9dbfe8,vue_boilerplate_background.jpg,3384994,"2018-10-31 15:36:15",,"image, vue_boilerplate",vue_boilerplate,0,0,1,0,0,b9a499aeea8b7039c0d82f447143174e
+4b0d34ae48e3171f4d1eacf23293a0c5,vue_boilerplate_template.jpg,256268,"2018-10-24 15:14:31",,"image, vue_boilerplate",vue_boilerplate,0,0,1,0,0,4a4ddc5effa0adb25914a7413d98440a
