@@ -1,4 +1,4 @@
-# Vue boilerplate
+# [dev-tools] vue boilerplate
 
 * note: This project uses the standardJS linting (https://standardjs.com/)
 * note: This project uses vue_remote_devtools (https://github.com/vuejs/vue-devtools/blob/master/shells/electron)
