@@ -1,7 +1,6 @@
 # Vue boilerplate
 
 * note: This project uses the standardJS linting (https://standardjs.com/)
-* note: This project uses showpad_library (https://gitlab.showpad.io/laurens.dhondt/showpad_library)
 * note: This project uses vue_remote_devtools (https://github.com/vuejs/vue-devtools/blob/master/shells/electron)
 
 ### Project setup
