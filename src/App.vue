@@ -60,6 +60,7 @@ export default {
     ])
   },
   mounted () {
+    console.log('test')
     this.$store.commit('updateSdkVersion', window.ShowpadLib.getVersion())
   },
   methods: {
