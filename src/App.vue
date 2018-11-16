@@ -60,6 +60,7 @@ export default {
     ])
   },
   mounted () {
+    this.initShowpadDB()
     this.$store.commit('updateSdkVersion', window.ShowpadLib.getVersion())
   },
   methods: {
@@ -99,6 +100,39 @@ export default {
               })
             })
         })
+    },
+    initShowpadDB () {
+      let self = this
+      let showpadDBUrl = window.assets[window.contents.showpadDB.value[0]]
+
+      let showpadDBId = showpadDBUrl.id
+      let showpadDBSlug = showpadDBUrl.appLink.replace('showpad://file/', '')
+
+      showpadDBUrl = window.ShowpadLib.getAssetFileUrl(showpadDBId, showpadDBSlug)
+
+      fetch(showpadDBUrl, {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + window.apiConfig.accessToken,
+          'Content-Type': 'application/json; charset=utf-8'
+        }
+      })
+        .then(function (response) {
+          return response.json()
+        })
+        .then(function (data) {
+          window.showpadDB = data
+          self.authShowpadDb()
+        })
+    },
+    authShowpadDb () {
+      let uuid = window.ShowpadLib.getUserInfo().id
+
+      if (uuid in window.showpadDB === false) {
+        window.showpadDB[uuid] = {}
+      }
+
+      let authedDB = window.showpadDB[uuid]
     }
   }
 }

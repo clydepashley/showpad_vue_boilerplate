@@ -59,6 +59,11 @@
     }
   },
   "contents": {
+    "showpadDB": {
+      "type": "asset",
+      "value": ["3432f0dd77b30d086aac93ad6755f59a"],
+      "description": "app db file"
+    },
     "pdfPlugin": {
       "templates": {
         "template1": {
