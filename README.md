@@ -1,6 +1,6 @@
 # [dev-tools] vue boilerplate
 
-* BSD License 2.0
+This project is licensed under the terms of the BSD License 2.0
 
 ### Project setup
 
