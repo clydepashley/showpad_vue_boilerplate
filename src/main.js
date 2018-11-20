@@ -1,6 +1,6 @@
 import devtools from '@vue/devtools'
-import Vue from 'vue'
 
+import Vue from 'vue'
 import App from './App.vue'
 
 import './utils/fonts.js'
@@ -9,43 +9,71 @@ import './assets/stylesheets/app.scss'
 
 import VueI18n from 'vue-i18n'
 import Vue2TouchEvents from 'vue2-touch-events'
-import VuePdfPlugin from '@showpad/vue-pdf-plugin'
 
 import store from './store'
-
-import { utilsConfig } from '@showpad/library'
 import json from '../public/config.json'
 
+import { showpadConfig, showpadDatabase } from '@showpad/library'
+
+// init vue plugins
 Vue.use(VueI18n)
 Vue.use(Vue2TouchEvents, { tapTolerance: 10, swipeTolerance: 100 })
-Vue.use(VuePdfPlugin, { store: store })
 
+// developer tools based on environment
 if (process.env.NODE_ENV === 'dev') {
   Vue.config.productionTip = false
   devtools.connect('http://localhost', '8098')
 }
 
-window.onShowpadLibLoaded = () => {
-  window.ShowpadLib.getShowpadApi(callbackFn)
+// wait for injection of showpadLib
+window.onShowpadLibLoaded = loadShowpadApi
 
-  function callbackFn (apiConfig) {
+// load apiConfig and set on window
+function loadShowpadApi () {
+  window.ShowpadLib.getShowpadApi((apiConfig) => {
     window.apiConfig = apiConfig
 
-    utilsConfig.loadConfig(apiConfig, {
-      env: process.env.NODE_ENV,
-      json: json
-    })
-      .then(response => {
-        let i18n = new VueI18n({
-          locale: window.labels.settings.language.value,
-          messages: window.labels.translations
-        })
+    loadShowpadConfig()
+  })
+}
 
-        new Vue({
-          render: h => h(App),
-          i18n,
-          store
-        }).$mount('#app')
-      })
-  }
+// load labels, content, assets and set on window
+function loadShowpadConfig () {
+  showpadConfig.init(window.apiConfig, {
+    env: process.env.NODE_ENV,
+    json: json
+  })
+    .then(function (response) {
+      loadShowpadDatabase()
+    })
+}
+
+// load database and populate vuex store
+function loadShowpadDatabase () {
+  showpadDatabase.init(window.apiConfig, {
+    id: window.contents.settings.showpadDatabase.id.value[0],
+    name: window.labels.settings.showpadDatabase.name.value
+  })
+    .then(function (response) {
+      // only set database if not empty
+      if (Object.getOwnPropertyNames(response).length !== 0) {
+        store.commit('initShowpadDB', response)
+      }
+
+      loadShowpadApp()
+    })
+}
+
+// load experience app with translations
+function loadShowpadApp () {
+  let i18n = new VueI18n({
+    locale: window.labels.settings.language.value,
+    messages: window.labels.translations
+  })
+
+  new Vue({
+    render: h => h(App),
+    i18n,
+    store
+  }).$mount('#app')
 }
