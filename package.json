@@ -2,7 +2,7 @@
   "name": "vue_boilerplate",
   "description": "[dev-tools] vue boilerplate for experience app",
   "author": "Laurens D'Hondt",
-  "version": "5.0.2",
+  "version": "7.0.6",
   "main": "main.js",
   "private": true,
   "scripts": {
@@ -18,7 +18,6 @@
     "@fortawesome/free-solid-svg-icons": "^5.3.1",
     "@fortawesome/vue-fontawesome": "^0.1.1",
     "@showpad/library": "git+ssh://git@gitlab.showpad.io:laurens.dhondt/showpad_library.git",
-    "@showpad/vue-pdf-plugin": "git+ssh://git@gitlab.showpad.io:laurens.dhondt/vue_pdf_plugin.git",
     "bootstrap": "^4.1.3",
     "vue": "^2.5.17",
     "vue-i18n": "^8.1.0",
@@ -27,7 +26,7 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "@showpad/sdk": "^0.7.0",
+    "@showpad/sdk": "^0.8.0",
     "@vue/cli-plugin-babel": "^3.0.1",
     "@vue/cli-plugin-eslint": "^3.0.1",
     "@vue/cli-service": "^3.0.1",

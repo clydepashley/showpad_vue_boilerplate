@@ -6,90 +6,85 @@
         "value": "en",
         "description": "language"
       },
-      "currency": {
-        "value": "€",
-        "description": "currency"
+      "showpadDatabase": {
+        "name": {
+          "value": "vue_boilerplate",
+          "description": "database name"
+        }
+      },
+      "showpadPdf": {
+        "primary_template": {
+          "fields": {
+            "value": "{'3a93e166e7cc0ff71dc837e80f72214b311e0e9818990fe4489fae96d3c9e4d1':{'name':'variable_sdkVersion','type':'variable','label':'sdkVersion','value':'','x':'60.64346190020159','y':'161.71751111821519','w':'473.9849482590124','h':'20.674750085566398'}}",
+            "description": "1e template fields object"
+          }
+        }
       }
     },
     "design": {
       "primary_color": {
         "value": "#FF6347",
-        "description": "primary color"
+        "description": "1e app color"
       },
       "secondary_color": {
         "value": "#F4B350",
-        "description": "secondary color"
+        "description": "2e app color"
       },
       "tertiary_color": {
         "value": "#000000",
-        "description": "tertiary color"
-      }
-    },
-    "pdfPlugin": {
-      "visible": {
-        "value": "false",
-        "description": "set PDF plugin visible"
-      },
-      "templates": {
-        "template1": {
-          "fields": {
-            "value": "{'3a93e166e7cc0ff71dc837e80f72214b311e0e9818990fe4489fae96d3c9e4d1':{'name':'variable_sdkVersion','type':'variable','label':'sdkVersion','value':'','x':'60.64346190020159','y':'161.71751111821519','w':'473.9849482590124','h':'20.674750085566398'}}",
-            "description": "JSON of pdf"
-          }
-        }
+        "description": "3e app color"
       }
     },
     "translations": {
       "en": {
-        "home": {
-          "title": {
-            "value": "Vue Boilerplate",
-            "description": "Showpad Vue Boilerplate"
-          },
-          "sdkVersion": {
-            "value": "SDK version:",
-            "description": "Showpad SDK version:"
-          },
-          "generatePdf": {
-            "value": "Generate PDF",
-            "description": "Generate PDF"
-          }
+        "title": {
+          "value": "Vue Boilerplate",
+          "description": "title of experience app"
+        },
+        "sdkVersion": {
+          "value": "SDK version:",
+          "description": "Showpad SDK version:"
+        },
+        "exportedPDF": {
+          "value": "Exported PDF:",
+          "description": "Exported PDF:"
+        },
+        "generatePdf": {
+          "value": "Generate PDF",
+          "description": "Generate PDF"
         }
       }
     }
   },
   "contents": {
-    "showpadDB": {
-      "type": "asset",
-      "value": ["3432f0dd77b30d086aac93ad6755f59a"],
-      "description": "app db file"
-    },
-    "pdfPlugin": {
-      "templates": {
-        "template1": {
+    "settings": {
+      "showpadDatabase": {
+        "id": {
+          "type": "asset",
+          "value": ["3f84169e172ec45ea5ac5ee81c58ec9c"],
+          "description": "database asset"
+        }
+      },
+      "showpadPdf": {
+        "primary_template": {
           "pdf": {
             "type": "asset",
             "value": ["1ab91f3c8b248f9f3e83ae17f1cf8d66"],
-            "description": "pdf template"
+            "description": "1e template pdf file"
           },
           "background": {
             "type": "asset",
             "value": ["4b0d34ae48e3171f4d1eacf23293a0c5"],
-            "description": "pdf background"
+            "description": "1e template background image"
           }
         }
       }
     },
     "design": {
-      "logo": {
-        "type": "asset",
-        "value": ["2bedc9b389a622b2dedc066e48d64e2f"],
-        "description": "logo"
-      },
-      "background": {
+      "primary_image": {
         "type": "asset",
         "value": ["759f617fd94251986954c35d5f9dbfe8"],
-        "description": "background"
+        "description": "1e app image"
       }
     }
   }
