@@ -20,5 +20,8 @@ module.exports = {
          }
       ]
     }
-  }
+  },
+  transpileDependencies: [
+    '@showpad/library'
+  ]
 }
