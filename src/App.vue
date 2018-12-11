@@ -19,6 +19,7 @@
           >
             <li>{{ $t("sdkVersion.value") }} {{ getSdkVersion }}</li>
             <li>{{ $t("exportedPDF.value") }} {{ getExportedPDF }}</li>
+            <li>{{ $t("leadCount.value") }} {{ leadCount }}</li>
           </ul>
 
           <button
@@ -43,6 +44,7 @@ export default {
   name: 'app',
   data () {
     return {
+      leadCount: 0,
       background: window.assets[window.contents.design.primary_image.value[0]]
     }
   },
@@ -54,7 +56,22 @@ export default {
     ])
   },
   mounted () {
-    this.$store.commit('updateSdkVersion', window.ShowpadLib.getVersion())
+    let self = this
+    self.$store.commit('updateSdkVersion', window.ShowpadLib.getVersion())
+
+    // Actual salesforce API request
+    fetch(window.labels.settings.showpadSalesforce.cors_anywhere.value + 'https://eu16.salesforce.com/services/data/v43.0/query?q=SELECT+count()+FROM+Lead', {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer ' + window.salesforceApi.accessToken
+      }
+    })
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (data) {
+        self.leadCount = data.totalSize
+      })
   },
   methods: {
     generatePdf () {

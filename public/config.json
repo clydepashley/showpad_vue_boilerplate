@@ -19,6 +19,28 @@
             "description": "1e template fields object"
           }
         }
+      },
+      "showpadSalesforce": {
+        "client_id": {
+          "value": "",
+          "description": "Consumer id of SFDC_connector"
+        },
+        "client_secret": {
+          "value": "",
+          "description": "Consumer secret of SFDC_connector"
+        },
+        "username": {
+          "value": "",
+          "description": "Username of SFDC user"
+        },
+        "password": {
+          "value": "",
+          "description": "Password of SFDC user"
+        },
+        "cors_anywhere": {
+          "value": "",
+          "description": "Url of cors-anywhere heroku app (https://github.com/Rob--W/cors-anywhere)"
+        }
       }
     },
     "design": {
@@ -48,6 +70,10 @@
         "exportedPDF": {
           "value": "Exported PDF:",
           "description": "Exported PDF:"
+        },
+        "leadCount": {
+          "value": "Salesforce lead count:",
+          "description": "Salesforce lead count:"
         },
         "generatePdf": {
           "value": "Generate PDF",
