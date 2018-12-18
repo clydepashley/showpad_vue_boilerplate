@@ -19,6 +19,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.1",
     "@showpad/library": "git+ssh://git@gitlab.showpad.io:laurens.dhondt/showpad_library.git",
     "bootstrap": "^4.1.3",
+    "read-excel-file": "^2.0.6",
     "vue": "^2.5.17",
     "vue-i18n": "^8.1.0",
     "vue2-touch-events": "^1.0.0",
