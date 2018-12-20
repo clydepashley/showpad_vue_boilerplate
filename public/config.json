@@ -6,106 +6,39 @@
         "value": "en",
         "description": "language"
       },
-      "showpadDatabase": {
-        "name": {
-          "value": "vue_boilerplate",
-          "description": "database name"
-        }
-      },
-      "showpadPdf": {
-        "primary_template": {
-          "fields": {
-            "value": "{'3a93e166e7cc0ff71dc837e80f72214b311e0e9818990fe4489fae96d3c9e4d1':{'name':'variable_sdkVersion','type':'variable','label':'sdkVersion','value':'','x':'60.64346190020159','y':'161.71751111821519','w':'473.9849482590124','h':'20.674750085566398'}}",
-            "description": "1e template fields object"
-          }
-        }
-      },
-      "showpadSalesforce": {
-        "client_id": {
-          "value": "",
-          "description": "Consumer id of SFDC_connector"
-        },
-        "client_secret": {
-          "value": "",
-          "description": "Consumer secret of SFDC_connector"
-        },
-        "username": {
-          "value": "",
-          "description": "Username of SFDC user"
-        },
-        "password": {
-          "value": "",
-          "description": "Password of SFDC user"
-        },
-        "cors_anywhere": {
-          "value": "",
-          "description": "Url of cors-anywhere heroku app (https://github.com/Rob--W/cors-anywhere)"
-        }
+      "currency": {
+        "value": "€",
+        "description": "currency"
       }
     },
     "design": {
       "primary_color": {
         "value": "#FF6347",
-        "description": "1e app color"
+        "description": "primary color"
       },
       "secondary_color": {
         "value": "#F4B350",
-        "description": "2e app color"
+        "description": "secondary color"
       },
       "tertiary_color": {
         "value": "#000000",
-        "description": "3e app color"
+        "description": "tertiary color"
       }
     },
     "translations": {
       "en": {
         "title": {
-          "value": "Vue Boilerplate",
+          "value": "Vue boilerplate",
           "description": "title of experience app"
         },
-        "sdkVersion": {
-          "value": "SDK version:",
-          "description": "Showpad SDK version:"
-        },
-        "exportedPDF": {
-          "value": "Exported PDF:",
-          "description": "Exported PDF:"
-        },
-        "leadCount": {
-          "value": "Salesforce lead count:",
-          "description": "Salesforce lead count:"
-        },
-        "generatePdf": {
-          "value": "Generate PDF",
-          "description": "Generate PDF"
+        "subtitle": {
+          "value": "For Showpad experience apps",
+          "description": "subtitle of experience app"
         }
       }
     }
   },
   "contents": {
-    "settings": {
-      "showpadDatabase": {
-        "id": {
-          "type": "asset",
-          "value": ["3f84169e172ec45ea5ac5ee81c58ec9c"],
-          "description": "database asset"
-        }
-      },
-      "showpadPdf": {
-        "primary_template": {
-          "pdf": {
-            "type": "asset",
-            "value": ["1ab91f3c8b248f9f3e83ae17f1cf8d66"],
-            "description": "1e template pdf file"
-          },
-          "background": {
-            "type": "asset",
-            "value": ["4b0d34ae48e3171f4d1eacf23293a0c5"],
-            "description": "1e template background image"
-          }
-        }
-      }
-    },
     "design": {
       "primary_image": {
         "type": "asset",

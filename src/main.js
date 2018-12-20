@@ -13,7 +13,7 @@ import Vue2TouchEvents from 'vue2-touch-events'
 import store from './store'
 import json from '../public/config.json'
 
-import { showpadConfig, showpadDatabase, showpadSalesforce } from '@showpad/library'
+import { showpadConfig } from '@showpad/library'
 
 // init vue plugins
 Vue.use(VueI18n)
@@ -44,36 +44,8 @@ function loadShowpadConfig () {
     json: json
   })
     .then(function (response) {
-      loadShowpadDatabase()
+      loadShowpadApp()
     })
-}
-
-// load database and populate vuex store [OPTIONAL]
-function loadShowpadDatabase () {
-  showpadDatabase.init(window.apiConfig, {
-    id: window.contents.settings.showpadDatabase.id.value[0],
-    name: window.labels.settings.showpadDatabase.name.value
-  })
-    .then(function (response) {
-      // only set database if not empty
-      if (Object.getOwnPropertyNames(response).length !== 0) {
-        store.commit('initShowpadDB', response)
-      }
-
-      loadSalesforceApi()
-    })
-}
-
-// load salesforce api info and set on window [OPTIONAL]
-function loadSalesforceApi () {
-  showpadSalesforce.getSalesforceApi().then((response) => {
-    window.salesforceApi = response
-
-    console.log('showpad lib resolved to main.js')
-    console.log(window.salesforceApi)
-
-    loadShowpadApp()
-  })
 }
 
 // load experience app with translations
