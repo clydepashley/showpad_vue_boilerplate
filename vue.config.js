@@ -1,5 +1,5 @@
 module.exports = {
-  baseUrl: './',
+  publicPath: './',
   css: {
     loaderOptions: {
       sass: {
@@ -10,14 +10,14 @@ module.exports = {
   configureWebpack: {
     module: {
       rules: [
-         {
-           test: /(pdfkit|linebreak|fontkit|unicode|brotli|png-js).*\.js$/,
-           loader: 'transform-loader?brfs',
-         },
-         {
-           test: /\.pdf$/,
-           loader: 'url-loader',
-         }
+        {
+          test: /(pdfkit|linebreak|fontkit|unicode|brotli|png-js).*\.js$/,
+          loader: 'transform-loader?brfs'
+        },
+        {
+          test: /\.pdf$/,
+          loader: 'url-loader'
+        }
       ]
     }
   },
