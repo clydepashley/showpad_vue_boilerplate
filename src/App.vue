@@ -1,28 +1,24 @@
 <template>
   <div id="app">
+    <p>Hello from Vue!!</p>
+    <!--
     <div
       class="app-container font-smoothing padding-30 text-center d-flex align-items-center"
       v-bg-src="{ id: background.id, appLink: background.appLink}"
     >
       <div class="w-100">
         <div class="d-inline-block bg-white padding-30 border-radius box-shadow">
-          <h1
-            class="margin-bottom-15"
-            v-cl-tertiary>
-            {{ $t("title.value") }}
-          </h1>
+          <h1 class="margin-bottom-15" v-cl-tertiary>{{ $t("title.value") }}</h1>
 
-          <p>
-            {{ $t("subtitle.value") }}
-          </p>
+          <p>{{ $t("subtitle.value") }}</p>
         </div>
       </div>
     </div>
+    -->
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'app',
   data () {
@@ -31,13 +27,15 @@ export default {
     }
   },
   mounted () {
-
+    console.log('App.vue mounted!')
   }
 }
+
+console.log('App.vue reporting!')
 </script>
 
-<style lang="scss">
-
+<style>
+/*
 .app-container {
   height: 100vh;
   background-size: cover;
@@ -48,5 +46,5 @@ export default {
     height: 100px;
   }
 }
-
+*/
 </style>
